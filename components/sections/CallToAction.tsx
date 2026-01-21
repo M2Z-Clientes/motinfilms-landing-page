@@ -38,10 +38,10 @@ export function CallToAction() {
       variants={sectionVariants}
     >
       <div className="container mx-auto max-w-4xl text-center">
-        <motion.h2 className="text-4xl md:text-5xl font-bold mb-6" variants={itemVariants}>
+        <motion.h2 className="text-4xl md:text-5xl font-bold mb-6" >
           Pronto para <span className="text-primary">Elevar</span> seu Posicionamento?
         </motion.h2>
-        <motion.p className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-medium" variants={itemVariants}>
+        <motion.p className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-medium" >
           Receba um <span className="font-bold">Diagnóstico de Posicionamento Audiovisual Gratuito</span> e descubra o potencial inexplorado da sua marca.
         </motion.p>
 
@@ -50,7 +50,7 @@ export function CallToAction() {
             <motion.div
               key={index}
               className="flex items-center space-x-3 text-lg md:text-xl font-medium"
-              variants={itemVariants}
+              
             >
               <Check className="w-6 h-6 text-primary" />
               <span>{item.text}</span>
@@ -58,7 +58,7 @@ export function CallToAction() {
           ))}
         </div>
 
-        <motion.div variants={itemVariants}>
+        <motion.div >
           <Button
             size="lg"
             variant="secondary" // Using secondary variant but customizing its colors to fit the inverted section

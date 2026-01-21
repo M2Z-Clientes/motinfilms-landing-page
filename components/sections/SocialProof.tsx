@@ -42,13 +42,13 @@ export function SocialProof() {
       variants={sectionVariants}
     >
       <div className="container mx-auto max-w-6xl text-center">
-        <motion.h2 className="text-4xl md:text-5xl font-bold mb-12" variants={itemVariants}>
+        <motion.h2 className="text-4xl md:text-5xl font-bold mb-12" >
           Marcas que <span className="text-accent">confiam</span> em nosso olhar.
         </motion.h2>
 
         <motion.div
           className="relative w-full overflow-hidden mb-12"
-          variants={itemVariants}
+          
         >
           {/* Logo Carousel - Infinite scroll effect */}
           <div className="flex animate-scroll-logos py-4">
@@ -82,7 +82,7 @@ export function SocialProof() {
           }
         `}</style>
 
-        <motion.div variants={itemVariants}>
+        <motion.div >
           <Button
             size="lg"
             data-nt-ut-event='click'

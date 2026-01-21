@@ -103,7 +103,7 @@ export function Features() {
       variants={sectionVariants}
     >
       <div className="container mx-auto max-w-6xl">
-        <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-16" variants={itemVariants}>
+        <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-16" >
           <span className="text-accent">Desafios</span> comuns que nossos clientes enfrentam.
         </motion.h2>
 
@@ -113,7 +113,7 @@ export function Features() {
             <motion.div
               key={point.title}
               className="glass-panel p-8 flex flex-col items-start space-y-4"
-              variants={itemVariants}
+              
             >
               {point.icon}
               <h3 className="text-2xl font-semibold text-text">{point.title}</h3>
@@ -130,7 +130,7 @@ export function Features() {
           ))}
         </div>
 
-        <motion.h2 className="text-4xl md:text-5xl font-bold text-center mt-20 mb-16" variants={itemVariants}>
+        <motion.h2 className="text-4xl md:text-5xl font-bold text-center mt-20 mb-16" >
           Como a <span className="text-accent">Motin Films</span> transforma.
         </motion.h2>
 

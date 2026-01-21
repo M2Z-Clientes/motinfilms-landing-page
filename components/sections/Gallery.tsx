@@ -70,7 +70,7 @@ export function Gallery() {
       variants={sectionVariants}
     >
       <div className="container mx-auto max-w-6xl text-center">
-        <motion.h2 className="text-4xl md:text-5xl font-bold mb-16" variants={itemVariants}>
+        <motion.h2 className="text-4xl md:text-5xl font-bold mb-16" >
           Nosso <span className="text-accent">Portfólio</span>.
           <br /> Veja a magia em movimento.
         </motion.h2>
@@ -80,7 +80,7 @@ export function Gallery() {
             <motion.div
               key={index}
               className="glass-panel overflow-hidden relative group cursor-pointer"
-              variants={itemVariants}
+              
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -98,7 +98,7 @@ export function Gallery() {
           ))}
         </div>
 
-        <motion.div variants={itemVariants}>
+        <motion.div >
           <Button
             size="lg"
             variant="secondary"

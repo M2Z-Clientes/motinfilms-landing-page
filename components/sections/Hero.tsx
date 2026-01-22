@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import CinematicText from '../ui/CinematicText';
+import Image from 'next/image';
 
 export function Hero() {
   const imageUrl = "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1920&h=1080&fit=crop";
@@ -50,12 +51,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-black/20 pointer-events-none" />
       </div>
 
-      {/* --- Opcional: usar imagem em mobiles para economizar dados ---
-      <div className="absolute inset-0 bg-cover bg-center opacity-30 md:block hidden"
-           style={{ backgroundImage: `url(${imageUrl})` }} />
-      */}
-
       <div className="relative z-10 max-w-4xl mx-auto space-y-8">
+        <Image width="200" height="200" src="/images/motin-logo-white.webp" alt="Filmes que comunicam, emocionam e geram resultados." className="mx-auto" />
         <motion.h1 className="text-6xl md:text-8xl font-extrabold text-text leading-tight drop-shadow-lg" >
           Motive sua audiência.
           <br /> Eleve sua <CinematicText text=" marca " speed="slow" />

@@ -13,7 +13,7 @@ const CONTENT_TYPE = "formulario";
 
 function ensureDataLayer() {
   if (typeof window === "undefined") return;
-  window.dataLayer = window.dataLayer || [];
+  (window as any).dataLayer = (window as any).dataLayer || [];
 }
 
 function normalizeEmail(email?: string) {

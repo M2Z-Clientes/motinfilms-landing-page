@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Check, Clapperboard, Star } from 'lucide-react';
 import { TrackView } from 'ninetwo-user-tracking';
-import CinematicText from '../ui/CinematicText'; // Certifique-se de importar o componente criado anteriormente
+import CinematicText from '../ui/CinematicText';
 
 export function CallToAction() {
   const ctaItems = [
@@ -20,96 +20,90 @@ export function CallToAction() {
       label="Pedir Diagnostico Gratuito"
       threshold={0.5}
     >
-      <section className="relative py-24 px-4 bg-[#020202] text-white overflow-hidden flex flex-col items-center justify-center min-h-[600px]">
+      {/* Min-height reduzido e padding ajustado para mobile */}
+      <section className="relative py-16 md:py-24 px-4 bg-[#020202] text-white overflow-hidden flex flex-col items-center justify-center min-h-[500px] md:min-h-[600px]">
         
-        {/* --- CINEMATIC BACKGROUND --- */}
-        {/* Perfurações de Filme 35mm nas laterais */}
-        <div className="absolute left-0 top-0 bottom-0 w-8 md:w-12 bg-[#0a0a0a] border-r border-white/10 flex flex-col justify-between py-2 z-10 pointer-events-none">
+        {/* Faixas Laterais: HIDDEN no Mobile */}
+        <div className="hidden md:flex absolute left-0 top-0 bottom-0 w-12 bg-[#0a0a0a] border-r border-white/10 flex-col justify-between py-2 z-10 pointer-events-none">
              {[...Array(20)].map((_, i) => (
                 <div key={i} className="w-4 h-6 mx-auto bg-black rounded-sm opacity-50"></div>
              ))}
         </div>
-        <div className="absolute right-0 top-0 bottom-0 w-8 md:w-12 bg-[#0a0a0a] border-l border-white/10 flex flex-col justify-between py-2 z-10 pointer-events-none">
+        <div className="hidden md:flex absolute right-0 top-0 bottom-0 w-12 bg-[#0a0a0a] border-l border-white/10 flex-col justify-between py-2 z-10 pointer-events-none">
              {[...Array(20)].map((_, i) => (
                 <div key={i} className="w-4 h-6 mx-auto bg-black rounded-sm opacity-50"></div>
              ))}
         </div>
 
-        {/* Efeito de Projetor (Spotlight) */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-gradient-to-b from-white/5 via-transparent to-transparent blur-3xl pointer-events-none"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay"></div>
 
         <div className="container mx-auto max-w-4xl relative z-20 text-center">
           
-          {/* Label Superior */}
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 mb-8 border border-white/20 px-4 py-1 rounded-full bg-white/5 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 mb-6 md:mb-8 border border-white/20 px-3 py-1 md:px-4 rounded-full bg-white/5 backdrop-blur-sm"
           >
             <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-gray-300">
+            <span className="font-mono text-[9px] md:text-[10px] tracking-[0.2em] uppercase text-gray-300">
                OPORTUNIDADE EXCLUSIVA
             </span>
           </motion.div>
 
-          {/* Título Principal */}
+          {/* Título Responsivo */}
           <motion.h2 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+            className="text-3xl md:text-6xl font-bold mb-6 leading-tight"
           >
             PRONTO PARA O <br className="hidden md:block" />
-            <span className="relative inline-block px-2 mx-2">
-                {/* Efeito de marca-texto cinematográfico (Luz de fundo) */}
+            <span className="relative inline-block px-2 mx-2 mt-2 md:mt-0">
                 <div className="absolute inset-0 bg-white/10 -skew-x-12 blur-sm"></div>
+                {/* Forçando speed='fast' no mobile se necessário, ou mantendo medium */}
                 <CinematicText text="CLOSE-UP" speed="medium" />
             </span> 
-            DA SUA MARCA?
+            <span className="block md:inline mt-2 md:mt-0">DA SUA MARCA?</span>
           </motion.h2>
 
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-gray-400 font-light"
+            className="text-base md:text-xl mb-8 md:mb-12 max-w-2xl mx-auto text-gray-400 font-light px-2"
           >
-            Receba um <span className="text-white font-semibold border-b border-white/30">Diagnóstico de Posicionamento Audiovisual</span> gratuito e descubra o roteiro que falta para o seu sucesso.
+            Receba um <span className="text-white font-semibold border-b border-white/30">Diagnóstico de Posicionamento</span> gratuito.
           </motion.p>
 
-          {/* O "Script" (Lista de Benefícios) */}
-          <div className="relative max-w-xl mx-auto mb-12">
-            {/* Visual de Papel/Tablet */}
+          <div className="relative max-w-xl mx-auto mb-8 md:mb-12">
             <div className="absolute inset-0 bg-white/5 blur-xl rounded-full"></div>
             
             <motion.div 
-                className="relative bg-black/40 border border-white/10 backdrop-blur-md p-8 rounded-sm"
+                className="relative bg-black/40 border border-white/10 backdrop-blur-md p-6 md:p-8 rounded-sm"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
             >
-                {/* Linhas decorativas do "Roteiro" */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gray-500/50 rounded-b-md"></div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 md:w-16 h-1 bg-gray-500/50 rounded-b-md"></div>
 
-                <div className="space-y-6 text-left">
+                <div className="space-y-4 md:space-y-6 text-left">
                     {ctaItems.map((item, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.4 + (index * 0.1) }}
-                        className="flex items-start gap-4 group"
+                        className="flex items-start gap-3 md:gap-4 group"
                     >
-                        {/* Checkbox estilo Script */}
-                        <div className="mt-1 w-5 h-5 rounded border border-white/30 flex items-center justify-center bg-white/5 group-hover:bg-white group-hover:text-black transition-colors duration-300">
+                        <div className="mt-1 w-5 h-5 min-w-[20px] rounded border border-white/30 flex items-center justify-center bg-white/5 group-hover:bg-white group-hover:text-black transition-colors duration-300">
                             <Check className="w-3 h-3" />
                         </div>
                         <div>
-                            <span className="block font-mono text-[10px] text-gray-500 mb-0.5 tracking-wider">{item.code}</span>
-                            <span className="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">{item.text}</span>
+                            <span className="block font-mono text-[9px] md:text-[10px] text-gray-500 mb-0.5 tracking-wider">{item.code}</span>
+                            <span className="text-sm md:text-lg font-medium text-gray-200 group-hover:text-white transition-colors">{item.text}</span>
                         </div>
                     </motion.div>
                     ))}
@@ -117,14 +111,12 @@ export function CallToAction() {
             </motion.div>
           </div>
 
-          {/* Botão de Ação Principal */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, type: 'spring' }}
-            className="relative group inline-block"
+            className="relative group inline-block w-full md:w-auto px-4 md:px-0"
           >
-            {/* Efeito Glow atrás do botão */}
             <div className="absolute inset-0 bg-white rounded-sm blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
             
             <Button
@@ -132,14 +124,13 @@ export function CallToAction() {
               data-nt-ut-event='click'
               data-nt-ut-category='Offer Section'
               data-nt-ut-label='Pedir Diagnostico Gratuito'
-              // Usando classes diretas para garantir o estilo, já que as variantes podem ser limitadas
-              className="relative bg-white text-black hover:bg-gray-200 hover:text-black h-16 px-10 text-base md:text-lg tracking-widest font-bold uppercase rounded-sm border-2 border-transparent hover:border-black/10 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+              className="relative bg-white text-black hover:bg-gray-200 hover:text-black h-14 md:h-16 w-full md:w-auto px-6 md:px-10 text-sm md:text-lg tracking-widest font-bold uppercase rounded-sm border-2 border-transparent hover:border-black/10 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center justify-center"
             >
-              <Clapperboard className="w-5 h-5 mr-3 group-hover:animate-pulse" />
+              <Clapperboard className="w-4 h-4 md:w-5 md:h-5 mr-3 group-hover:animate-pulse" />
               Solicitar Diagnóstico
             </Button>
             
-            <p className="mt-4 font-mono text-[10px] text-gray-500 uppercase tracking-widest opacity-60">
+            <p className="mt-4 font-mono text-[9px] md:text-[10px] text-gray-500 uppercase tracking-widest opacity-60">
                 Vagas limitadas para este mês
             </p>
           </motion.div>

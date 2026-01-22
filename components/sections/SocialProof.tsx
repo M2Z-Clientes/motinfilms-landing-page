@@ -29,7 +29,7 @@ const row2 = partners.slice(8);
 
 export function SocialProof() {
   return (
-    <section className="relative py-24 bg-[#050505] text-white overflow-hidden border-t border-white/5">
+    <section className="relative py-24 bg-[#050505] text-white overflow-hidden border-t border-white/5 shadow-2xl">
       
       {/* Background Noise & Vignette */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none mix-blend-overlay"></div>

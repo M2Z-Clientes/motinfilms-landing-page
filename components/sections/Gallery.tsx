@@ -115,7 +115,6 @@ export function Gallery() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              variants={cardVariants}
               className="group relative cursor-pointer"
             >
               {/* Moldura do "Monitor" */}

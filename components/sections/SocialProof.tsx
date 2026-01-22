@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
+import KineticText from '../ui/KineticText';
+import CinematicText from '../ui/CinematicText';
 
 export function SocialProof() {
   const clientLogos = [
@@ -10,8 +12,6 @@ export function SocialProof() {
     { name: 'Ecoparque', image: 'https://cdn-icons-png.flaticon.com/512/3233/3233519.png' }, // Generic eco logo
     { name: 'Coca-Cola', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1024px-Coca-Cola_logo.svg.png' },
     { name: 'Google', image: 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png' },
-    { name: 'Nike', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png' },
-    { name: 'Adidas', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1024px-Adidas_Logo.svg.png' },
     { name: 'Microsoft', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1200px-Microsoft_logo_%282012%29.svg.png' },
   ];
 
@@ -43,7 +43,7 @@ export function SocialProof() {
     >
       <div className="container mx-auto max-w-6xl text-center">
         <motion.h2 className="text-4xl md:text-5xl font-bold mb-12" >
-          Marcas que <span className="text-accent">confiam</span> em nosso olhar.
+          Marcas que confiam em nosso olhar.
         </motion.h2>
 
         <motion.div

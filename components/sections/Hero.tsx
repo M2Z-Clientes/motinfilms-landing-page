@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
+import CinematicText from '../ui/CinematicText';
 
 export function Hero() {
   const imageUrl = "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1920&h=1080&fit=crop";
@@ -56,8 +57,8 @@ export function Hero() {
 
       <div className="relative z-10 max-w-4xl mx-auto space-y-8">
         <motion.h1 className="text-6xl md:text-8xl font-extrabold text-text leading-tight drop-shadow-lg" >
-          <span className="text-accent">Motive</span> sua audiência.
-          <br /> Eleve sua <span className="text-accent">marca</span>.
+          Motive sua audiência.
+          <br /> Eleve sua <CinematicText text=" marca " speed="slow" />.
         </motion.h1>
         <motion.p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto" >
           Transformamos sua visão em impacto cinematográfico. Filmes que não apenas mostram, mas comunicam, emocionam e geram resultados reais para o seu negócio.

@@ -43,7 +43,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       string
     > = {
       primary:
-        'bg-accent text-primary hover:bg-purple-400 border border-transparent', // Assuming primary is dark text, accent is bright background
+        'bg-accent text-primary border border-transparent', // Assuming primary is dark text, accent is bright background
       secondary:
         'bg-transparent text-accent border border-accent hover:bg-accent hover:text-primary',
       ghost: 'bg-transparent text-text hover:bg-white/10 border border-transparent',

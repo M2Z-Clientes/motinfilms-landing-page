@@ -1,6 +1,6 @@
 # Motin Films - Landing Page
 
-Este projeto foi gerado automaticamente pelo **M2Z Creator**, focado em alta performance, SEO e rastreamento de dados granular.
+Este projeto foi desenvolvido com tecnologia **M2Z Creator**, focado em alta performance, SEO e rastreamento de dados granular.
 
 Built with **Next.js 14 (App Router)**, **TypeScript** & **Tailwind CSS**.
 

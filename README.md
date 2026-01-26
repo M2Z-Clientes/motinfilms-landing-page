@@ -1,4 +1,3 @@
-```markdown
 # ⚡ Motin Films
 
 Este projeto foi gerado automaticamente pelo **M2Z Creator**, focado em alta performance, SEO e rastreamento de dados granular.

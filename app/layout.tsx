@@ -1,7 +1,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import { Providers } from './providers';
-import RDStationScript from '@/components/integrations/RDStationScript';
+import RDStationScript from '@/lib/RDStationScript';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 

@@ -98,7 +98,7 @@ const LogoItem = ({ partner }: { partner: { name: string; src: string } }) => (
       src={partner.src}
       alt={partner.name}
       loading="lazy"
-      className="max-h-12 w-auto object-contain transition-all duration-500 filter brightness-0 invert opacity-30 group-hover:filter-none group-hover:opacity-100 group-hover:scale-110"
+      className="max-h-30 w-auto object-contain transition-all duration-500 filter brightness-0 invert opacity-30 group-hover:filter-none group-hover:opacity-100 group-hover:scale-110"
     />
   </div>
 );

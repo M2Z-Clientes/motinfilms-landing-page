@@ -113,7 +113,7 @@ export function Gallery() {
             <div className="h-[1px] w-4 md:w-8 bg-accent"></div>
             <Film className="w-3 h-3 md:w-4 md:h-4 text-accent" />
             <span className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.4em] uppercase text-gray-400">
-              Arquivo 2024
+              Arquivo 2026
             </span>
             <div className="h-[1px] w-4 md:w-8 bg-accent"></div>
           </div>

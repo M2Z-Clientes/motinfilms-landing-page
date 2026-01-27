@@ -51,7 +51,7 @@ export function Lp2Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight drop-shadow-2xl"
+            className="text-4xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight drop-shadow-2xl"
           >
             PARE DE SER COMPARADO PELO <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500">PREÇO.</span>
             <br />

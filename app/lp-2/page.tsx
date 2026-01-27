@@ -22,11 +22,6 @@ export default function LandingPage2() {
         <Lp2Hero />
       </TrackView>
 
-      {/* Social Proof Global: Validação imediata após a promessa */}
-      <TrackView eventName="lp2_socialproof_view" category="Social Proof" label="Logos LP2">
-        <SocialProof />
-      </TrackView>
-
       <TrackView eventName="lp2_provocation_view" category="Content" label="Provocation LP2">
         <TheProvocation />
       </TrackView>
@@ -34,6 +29,8 @@ export default function LandingPage2() {
       <TrackView eventName="lp2_solution_view" category="Content" label="Solution LP2">
         <TheSolution />
       </TrackView>
+
+      <SocialProof />
 
       {/* Authority Club (Específico da LP2 com depoimento focado) */}
       <TrackView eventName="lp2_authority_view" category="Social Proof" label="Authority LP2">

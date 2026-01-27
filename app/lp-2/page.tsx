@@ -8,8 +8,10 @@ import { StrategicArsenal } from '@/components/sections-lp-2/StrategicArsenal';
 import { OurFormats } from '@/components/sections-lp-2/OurFormats';
 import { ExcellenceMethod } from '@/components/sections-lp-2/ExcellenceMethod';
 import { FinalCTA } from '@/components/sections-lp-2/FinalCTA';
-import { AncineLicense } from '@/components/sections/AncineLicense'; // Reutilizando componente global
-import { NationalCoverage } from '@/components/sections/NationalCoverage'; // Reutilizando componente global
+import { AncineLicense } from '@/components/sections/AncineLicense';
+import { NationalCoverage } from '@/components/sections/NationalCoverage';
+import { Gallery } from '@/components/sections/Gallery'; // Importado
+import { SocialProof } from '@/components/sections/SocialProof'; // Importado
 import { TrackView } from 'ninetwo-user-tracking';
 
 export default function LandingPage2() {
@@ -20,6 +22,11 @@ export default function LandingPage2() {
         <Lp2Hero />
       </TrackView>
 
+      {/* Social Proof Global: Validação imediata após a promessa */}
+      <TrackView eventName="lp2_socialproof_view" category="Social Proof" label="Logos LP2">
+        <SocialProof />
+      </TrackView>
+
       <TrackView eventName="lp2_provocation_view" category="Content" label="Provocation LP2">
         <TheProvocation />
       </TrackView>
@@ -28,6 +35,7 @@ export default function LandingPage2() {
         <TheSolution />
       </TrackView>
 
+      {/* Authority Club (Específico da LP2 com depoimento focado) */}
       <TrackView eventName="lp2_authority_view" category="Social Proof" label="Authority LP2">
         <AuthorityClub />
       </TrackView>
@@ -36,15 +44,18 @@ export default function LandingPage2() {
         <StrategicArsenal />
       </TrackView>
       
-      {/* Reutilizando componente global que se encaixa bem aqui */}
       <AncineLicense />
 
       <TrackView eventName="lp2_formats_view" category="Content" label="Formats LP2">
         <OurFormats />
       </TrackView>
       
-      {/* Reutilizando componente global de cobertura */}
       <NationalCoverage />
+
+      {/* Gallery Global: Prova visual antes da metodologia */}
+      <TrackView eventName="lp2_gallery_view" category="Gallery" label="Portfolio LP2">
+        <Gallery />
+      </TrackView>
 
       <TrackView eventName="lp2_methodology_view" category="Content" label="Methodology LP2">
         <ExcellenceMethod />

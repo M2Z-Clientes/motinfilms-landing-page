@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/Button';
 import CinematicText from '../ui/CinematicText';
 import { triggerRdStationPopup } from '@/utils/RDStation';
 
-// Lista completa baseada nos arquivos que você forneceu
 const partners = [
   { name: 'Electrolux', src: '/images/logos_marcas/electrolux-logo.png' },
   { name: 'Warner Bros', src: '/images/logos_marcas/wb-logo.png' },
@@ -16,7 +15,6 @@ const partners = [
   { name: 'Santos FC', src: '/images/logos_marcas/santos-logo.png' },
   { name: 'Lumicenter', src: '/images/logos_marcas/lumicenter-logo.png' },
   { name: 'Dental Uni', src: '/images/logos_marcas/dentaluni-logo.png' },
-  // { name: 'Escolar Office', src: '/images/logos_marcas/escolar-office-brasil.jpeg' },
   { name: 'Favretto', src: '/images/logos_marcas/favretto-logo.png' },
   { name: 'Compwire', src: '/images/logos_marcas/compwire-logo.png' },
   { name: 'Action Coach', src: '/images/logos_marcas/actioncoach-logo.png' },
@@ -24,7 +22,6 @@ const partners = [
   { name: 'Blue Prism', src: '/images/logos_marcas/ssc-blueprism-logo.png' },
 ];
 
-// Dividimos em duas linhas para o efeito de "End Credits"
 const row1 = partners.slice(0, 8);
 const row2 = partners.slice(8);
 
@@ -36,20 +33,28 @@ export function SocialProof() {
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none mix-blend-overlay"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505] pointer-events-none z-10"></div>
 
-      <div className="container mx-auto max-w-6xl text-center relative z-20 mb-16">
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-        >
-            <p className="font-mono text-xs text-gray-500 uppercase tracking-[0.4em] mb-4">
-                Créditos de Produção
-            </p>
-            <h2 className="text-3xl md:text-5xl font-bold">
-              GRANDES HISTÓRIAS, <br />
-              PARCEIROS LENDÁRIOS
+      {/* --- HEADER ESTILIZADO (Igual OurNumbers) --- */}
+      <div className="container mx-auto max-w-6xl relative z-20 mb-16 md:mb-24">
+        <div className="flex flex-col items-center justify-center text-center">
+            {/* Label com Red Dot */}
+            <div className="flex items-center gap-3 mb-4 opacity-60">
+                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.8)]"></div>
+                <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-gray-400">
+                    Production Credits
+                </span>
+            </div>
+            
+            {/* Título Principal com CinematicText */}
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white max-w-4xl leading-tight">
+               GRANDES HISTÓRIAS, <br className="md:hidden" />
+               <span className="md:ml-3">
+                  <CinematicText text="PARCEIROS LENDÁRIOS" className="text-white" />
+               </span>
             </h2>
-        </motion.div>
+
+            {/* Linha Divisória Gradiente */}
+            <div className="h-[1px] w-24 bg-gradient-to-r from-transparent via-red-500 to-transparent mt-8 opacity-70"></div>
+        </div>
       </div>
 
       {/* --- LOGO SCROLL AREA --- */}
@@ -124,10 +129,6 @@ const LogoItem = ({ partner }: { partner: { name: string; src: string } }) => (
       src={partner.src}
       alt={partner.name}
       loading="lazy"
-      // A mágica acontece aqui:
-      // brightness-0 invert -> Transforma qualquer logo colorida em BRANCA SÓLIDA
-      // opacity-30 -> Deixa ela escura (cinza) no estado normal
-      // hover -> Restaura a cor original e opacidade total
       className="max-h-12 w-auto object-contain transition-all duration-500 
                  filter brightness-0 invert opacity-30 
                  group-hover:filter-none group-hover:opacity-100 group-hover:scale-110"

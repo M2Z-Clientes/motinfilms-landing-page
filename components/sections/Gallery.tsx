@@ -205,7 +205,7 @@ export function Gallery() {
         </motion.div>
 
         {/* Footer Button */}
-        <motion.div className="mt-16 md:mt-24 text-center" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+        {/* <motion.div className="mt-16 md:mt-24 text-center" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
           <Button
             size="lg"
             variant="ghost"
@@ -217,7 +217,7 @@ export function Gallery() {
           >
             Ver Catálogo Completo
           </Button>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* --- MODAL --- */}

@@ -20,7 +20,6 @@ export default function HomePage() {
 
       <Hero />
 
-
       <TrackView
         eventName="features_view"
         category="Destaque Section"

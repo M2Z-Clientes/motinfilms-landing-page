@@ -8,25 +8,25 @@ import { triggerRdStationPopup } from '@/utils/RDStation';
 import { TrendingUp, AlertOctagon } from 'lucide-react';
 
 export function Lp3Hero() {
-  const videoUrl = "https://motinfilms.com.br/Showreel.mp4"; 
+  const videoUrl = "https://motinfilms.com.br/Showreel.mp4";
 
   // Configuração dos benefícios laterais (Ancine agora é o destaque central)
   const sideBenefits = [
-    { 
-        text: "Estratégia de Martech", 
-        icon: <TrendingUp className="w-3 h-3 text-blue-500" />,
-        borderHover: "hover:border-blue-500/50"
+    {
+      text: "Estratégia de Martech",
+      icon: <TrendingUp className="w-3 h-3 text-blue-500" />,
+      borderHover: "hover:border-blue-500/50"
     },
-    { 
-        text: "Não é gasto, é investimento", 
-        icon: <AlertOctagon className="w-3 h-3 text-red-500" />,
-        borderHover: "hover:border-red-500/50"
+    {
+      text: "Não é gasto, é investimento",
+      icon: <AlertOctagon className="w-3 h-3 text-red-500" />,
+      borderHover: "hover:border-red-500/50"
     }
   ];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden bg-[#050505] py-20 md:py-10">
-      
+
       {/* VIDEO BACKGROUND */}
       <div className="absolute inset-0 overflow-hidden">
         <video
@@ -45,16 +45,16 @@ export function Lp3Hero() {
 
       <div className="relative z-10 container mx-auto max-w-7xl px-4 md:px-8 flex flex-col items-center">
         <div className="max-w-5xl space-y-8">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-             <Image width="180" height="180" src="/images/motin-logo-white.webp" alt="Motin Films" className="mx-auto w-24 md:w-32 opacity-70" />
+            <Image width="180" height="180" src="/images/motin-logo-white.webp" alt="Motin Films" className="mx-auto w-24 md:w-32 opacity-70" />
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -64,7 +64,7 @@ export function Lp3Hero() {
             SEU CONCORRENTE <CinematicText text="DOMINA O MERCADO" className="text-red-500" speed="fast" /> COM A NOSSA AJUDA.
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
@@ -74,45 +74,44 @@ export function Lp3Hero() {
           </motion.p>
 
           {/* --- NOVA ÁREA DE BENEFÍCIOS (LAYOUT CENTRALIZADO) --- */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
             className="flex flex-col md:flex-row items-center justify-center gap-6 py-6 w-full"
           >
-            
+
             {/* Lado Esquerdo: Martech (Azul para contraste tático) */}
             <div className={`flex items-center gap-2 text-xs md:text-sm font-mono text-gray-400 uppercase tracking-widest border border-white/10 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md transition-colors ${sideBenefits[0].borderHover}`}>
-                {sideBenefits[0].icon}
-                {sideBenefits[0].text}
+              {sideBenefits[0].icon}
+              {sideBenefits[0].text}
             </div>
 
             {/* --- CENTRO: SELO ANCINE (Destaque VIP) --- */}
-            <div className="relative group z-20">
-                {/* Glow Effect (Fundo) */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-red-600 via-orange-500 to-red-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-                
-                {/* Cartão Branco */}
-                <div className="relative flex items-center justify-center bg-white px-6 py-3 rounded-lg shadow-[0_0_30px_rgba(255,255,255,0.1)] transform transition-transform duration-300 hover:scale-105 border border-white/20">
-                    <div className="flex flex-col items-center leading-none">
-                        <span className="text-[8px] font-bold text-gray-500 uppercase tracking-[0.25em] mb-1">Produtora Licenciada</span>
-                        <div className="relative w-24 h-8 md:w-32 md:h-10">
-                            <Image 
-                                src="/images/ancine-logo-1.png" 
-                                alt="Certificação Ancine" 
-                                fill
-                                style={{ objectFit: 'contain' }}
-                                className="filter drop-shadow-sm"
-                            />
-                        </div>
-                    </div>
+            <div className="relative group">
+              {/* Glow Effect atrás do selo */}
+              <div className="absolute -inset-1 rounded-lg blur opacity-20 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+
+              <div className="relative flex items-center justify-center px-6 py-3 rounded-lg transform transition-transform duration-300 hover:scale-105">
+                <div className="flex flex-col items-center leading-none">
+                  <span className="text-[12px] font-bold text-white uppercase tracking-[0.2em] mb-1">Produtora Licenciada</span>
+                  <div className="relative w-28 h-12 md:w-40 md:h-16 mt-4 ">
+                    <Image
+                      src="/images/ancine-logo.png"
+                      alt="Certificação Ancine"
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className="filter drop-shadow-sm"
+                    />
+                  </div>
                 </div>
+              </div>
             </div>
 
             {/* Lado Direito: Investimento (Vermelho para urgência) */}
             <div className={`flex items-center gap-2 text-xs md:text-sm font-mono text-gray-400 uppercase tracking-widest border border-white/10 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md transition-colors ${sideBenefits[1].borderHover}`}>
-                {sideBenefits[1].icon}
-                {sideBenefits[1].text}
+              {sideBenefits[1].icon}
+              {sideBenefits[1].text}
             </div>
 
           </motion.div>

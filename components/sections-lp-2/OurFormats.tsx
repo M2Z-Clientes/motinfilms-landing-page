@@ -36,13 +36,6 @@ export function OurFormats() {
                 </motion.div>
             ))}
         </div>
-
-        <div className="mt-12 text-center">
-            <Button variant="ghost" className="border border-white/20 text-white hover:bg-white hover:text-black tracking-widest uppercase font-mono px-8 py-6" href="https://motinfilms.com.br/portfolio">
-                Ver Portfólio Cinematográfico <ArrowUpRight className="ml-2 w-4 h-4" />
-            </Button>
-        </div>
-
       </div>
     </section>
   );

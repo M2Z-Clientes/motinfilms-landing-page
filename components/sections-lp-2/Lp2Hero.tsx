@@ -83,14 +83,14 @@ export function Lp2Hero() {
             {/* --- CENTRAL: SELO ANCINE (Destaque Criativo) --- */}
             <div className="relative group">
                 {/* Glow Effect atrás do selo */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-red-600 via-orange-500 to-red-600 rounded-lg blur opacity-20 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                <div className="absolute -inset-1 rounded-lg blur opacity-20 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                 
-                <div className="relative flex items-center justify-center bg-white px-6 py-3 rounded-lg shadow-xl transform transition-transform duration-300 hover:scale-105 border border-white/20">
+                <div className="relative flex items-center justify-center px-6 py-3 rounded-lg transform transition-transform duration-300 hover:scale-105">
                     <div className="flex flex-col items-center leading-none">
-                        <span className="text-[8px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-1">Produtora Licenciada</span>
-                        <div className="relative w-24 h-8 md:w-32 md:h-10">
-                            <Image 
-                                src="/images/ancine-logo-1.png" 
+                        <span className="text-[12px] font-bold text-white uppercase tracking-[0.2em] mb-1">Produtora Licenciada</span>
+                        <div className="relative w-28 h-12 md:w-40 md:h-16 mt-4 ">
+                            <Image  
+                                src="/images/ancine-logo.png" 
                                 alt="Certificação Ancine" 
                                 fill
                                 style={{ objectFit: 'contain' }}

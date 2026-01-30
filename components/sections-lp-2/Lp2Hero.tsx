@@ -120,6 +120,9 @@ export function Lp2Hero() {
               size="lg"
               className="bg-white text-black hover:bg-gray-200 text-lg px-8 py-6 font-bold tracking-widest uppercase shadow-[0_0_40px_rgba(255,255,255,0.2)] h-auto whitespace-normal text-center"
               onClick={triggerRdStationPopup}
+              data-nt-ut-event='click'
+              data-nt-ut-category='Hero Section'
+              data-nt-ut-label='QUERO DESTACAR MINHA MARCA AGORA'
             >
               QUERO DESTACAR MINHA MARCA AGORA
             </Button>

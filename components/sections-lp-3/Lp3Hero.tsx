@@ -127,6 +127,9 @@ export function Lp3Hero() {
               size="lg"
               className=" text-white hover:text-white text-lg px-10 py-8 font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(0,0,0)] border-none h-auto whitespace-normal text-center"
               onClick={triggerRdStationPopup}
+              data-nt-ut-event='click'
+              data-nt-ut-category='Hero Section'
+              data-nt-ut-label='QUERO PARAR DE PERDER VENDAS'
             >
               QUERO PARAR DE PERDER VENDAS
             </Button>

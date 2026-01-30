@@ -1,10 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Radio, Globe, LocateFixed } from 'lucide-react';
 import { mapData, mapViewBox } from '@/data/brazilMapData';
 
-import './NationalCoverageV2.module.css';
+// Importação do CSS Module (certifique-se que o arquivo existe)
+import styles from './NationalCoverageV2.module.css';
 
 // Configuração de Delays (Escalonados para evitar que todos acendam juntos)
 const getRegionDelay = (region: string) => {
@@ -18,7 +19,8 @@ const getRegionDelay = (region: string) => {
     }
 };
 
-const regionVariants = {
+// TIPAGEM EXPLÍCITA DE VARIANTS PARA CORRIGIR O ERRO DO TYPESCRIPT
+const regionVariants: Variants = {
   hidden: { pathLength: 0, opacity: 0.1 },
   visible: (customDelay: number) => ({
     pathLength: [0, 1, 1, 0], // Desenha -> Fica cheio -> Apaga
@@ -99,7 +101,6 @@ export function NationalCoverageV2() {
 
           {/* --- COLUNA DIREITA (MAPA) --- */}
           <motion.div 
-             // AJUSTE DE TAMANHO: Aumentei height para h-[500px] / md:h-[800px]
              className="relative flex items-center justify-center order-2 md:order-2 h-[500px] md:h-[800px] w-full"
              initial={{ opacity: 0 }}
              whileInView={{ opacity: 1 }}
@@ -108,8 +109,7 @@ export function NationalCoverageV2() {
           >
             <svg 
                 viewBox={mapViewBox}
-                // AJUSTE DE TAMANHO: Aumentei max-w para 900px
-                className="w-full h-full max-w-[900px] drop-shadow-2xl map-svg"
+                className="w-full h-full max-w-[900px] drop-shadow-2xl"
                 style={{ overflow: 'visible' }}
             >
                 <defs>
@@ -121,22 +121,22 @@ export function NationalCoverageV2() {
                         </feMerge>
                     </filter>
                     
-                    {/* AJUSTE DE VISIBILIDADE: Gradiente mais claro para o "chão" do mapa */}
                     <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#1e1e1e" /> {/* Era #151515, clareei */}
-                        <stop offset="100%" stopColor="#121212" /> {/* Era #050505, clareei */}
+                        <stop offset="0%" stopColor="#1e1e1e" /> 
+                        <stop offset="100%" stopColor="#121212" /> 
                     </linearGradient>
                 </defs>
 
-                {/* CAMADA 1: BASE (Mais Visível) */}
+                {/* CAMADA 1: BASE (Mais Visível e com Hover CSS) */}
                 {mapData.map((state) => (
                     <path 
                         key={`base-${state.id}`}
                         d={state.d} 
                         fill="url(#mapGradient)" 
-                        stroke="#333333" // Borda mais clara (era #2a2a2a)
-                        strokeWidth="0.8" // Borda um pouco mais grossa
-                        className="transition-colors duration-300 hover:fill-[#2a2a2a]" // Efeito hover sutil
+                        stroke="#333333" 
+                        strokeWidth="0.8" 
+                        // Aplicação da classe do CSS Module para hover
+                        className={styles.statePath} 
                     />
                 ))}
 
@@ -147,12 +147,15 @@ export function NationalCoverageV2() {
                         d={state.d} 
                         fill="transparent" 
                         stroke="#ef4444" 
-                        strokeWidth="1" // Fino conforme pedido
+                        strokeWidth="1" 
                         strokeLinecap="round"
                         filter="url(#neon-glow)"
                         custom={getRegionDelay(state.region)}
+                        variants={regionVariants}
                         initial="hidden"
                         animate="visible"
+                        // Importante: pointer-events-none para não bloquear o hover da camada base
+                        style={{ pointerEvents: 'none' }} 
                     />
                 ))}
 

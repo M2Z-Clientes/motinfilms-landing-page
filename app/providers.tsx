@@ -11,7 +11,7 @@ export function Providers({ children }: ProvidersProps) {
   // from environment variables or through its own internal setup.
   // The plan did not provide a specific TrackingID to pass here.
   return (
-    <TrackingProvider gtmId="GTM-5B4KQ78K" debug>
+    <TrackingProvider gtmId="GTM-MMXG7WK" debug>
       {children}
     </TrackingProvider>
   );

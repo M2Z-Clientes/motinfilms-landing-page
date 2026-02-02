@@ -21,6 +21,7 @@ interface LandingPage2Props {
 }
 
 export function LandingPage2Template({ city }: LandingPage2Props) {
+  const locationText = city ? `em ${city}` : "Nacional";
   return (
     <main className="min-h-screen bg-[#050505]">
       

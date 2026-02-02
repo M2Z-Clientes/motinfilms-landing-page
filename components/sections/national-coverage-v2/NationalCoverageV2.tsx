@@ -4,7 +4,7 @@ import { motion, Variants } from 'framer-motion';
 import { Radio, Globe, LocateFixed } from 'lucide-react';
 import { mapData, mapViewBox } from '@/data/brazilMapData';
 
-// Importação do CSS Module (certifique-se que o arquivo existe)
+// Importação do CSS Module
 import styles from './NationalCoverageV2.module.css';
 
 // Configuração de Delays (Escalonados para evitar que todos acendam juntos)
@@ -19,12 +19,12 @@ const getRegionDelay = (region: string) => {
     }
 };
 
-// TIPAGEM EXPLÍCITA DE VARIANTS PARA CORRIGIR O ERRO DO TYPESCRIPT
+// TIPAGEM EXPLÍCITA DE VARIANTS
 const regionVariants: Variants = {
   hidden: { pathLength: 0, opacity: 0.1 },
   visible: (customDelay: number) => ({
-    pathLength: [0, 1, 1, 0], // Desenha -> Fica cheio -> Apaga
-    opacity: [0.1, 1, 1, 0.1], // Brilha -> Fica aceso -> Apaga
+    pathLength: [0, 1, 1, 0], 
+    opacity: [0.1, 1, 1, 0.1], 
     transition: {
       duration: 3,
       ease: "easeInOut",
@@ -35,7 +35,6 @@ const regionVariants: Variants = {
   })
 };
 
-// Coordenadas aproximadas para HUD (Ajuste fino visual se necessário)
 const hudPoints = [
     { x: 250, y: 200, label: 'Norte' },
     { x: 520, y: 480, label: 'Brasília' },
@@ -122,25 +121,25 @@ export function NationalCoverageV2() {
                     </filter>
                     
                     <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#1e1e1e" /> 
-                        <stop offset="100%" stopColor="#121212" /> 
+                        {/* ALTERADO: Tons de cinza mais claros para maior visibilidade */}
+                        <stop offset="0%" stopColor="#2a2a2a" /> 
+                        <stop offset="100%" stopColor="#1a1a1a" /> 
                     </linearGradient>
                 </defs>
 
-                {/* CAMADA 1: BASE (Mais Visível e com Hover CSS) */}
+                {/* CAMADA 1: BASE (Mais clara e visível) */}
                 {mapData.map((state) => (
                     <path 
                         key={`base-${state.id}`}
                         d={state.d} 
                         fill="url(#mapGradient)" 
-                        stroke="#333333" 
+                        stroke="#404040" // Borda um pouco mais clara para definir os estados
                         strokeWidth="0.8" 
-                        // Aplicação da classe do CSS Module para hover
                         className={styles.statePath} 
                     />
                 ))}
 
-                {/* CAMADA 2: NEON (Mais Fino e Controlado) */}
+                {/* CAMADA 2: NEON */}
                 {mapData.map((state) => (
                     <motion.path 
                         key={`neon-${state.id}`}
@@ -154,7 +153,6 @@ export function NationalCoverageV2() {
                         variants={regionVariants}
                         initial="hidden"
                         animate="visible"
-                        // Importante: pointer-events-none para não bloquear o hover da camada base
                         style={{ pointerEvents: 'none' }} 
                     />
                 ))}

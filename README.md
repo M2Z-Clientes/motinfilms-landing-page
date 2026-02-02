@@ -12,7 +12,7 @@ Built with **Next.js 14 (App Router)**, **TypeScript** & **Tailwind CSS**.
 - **Estilização:** Tailwind CSS v3 (Configuração estendida)
 - **Animações:** Framer Motion (Scroll reveal & micro-interactions)
 - **Ícones:** Lucide React
-- **Analytics:** Ninetwo User Tracking (GTM Integration)
+- **Analytics:** Ninetwo User Tracking (GTM Integration) 
 
 ---
 

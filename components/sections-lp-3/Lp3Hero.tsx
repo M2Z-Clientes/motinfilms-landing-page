@@ -29,7 +29,7 @@ export function Lp3Hero() {
 
       {/* VIDEO BACKGROUND */}
       <div className="absolute inset-0 overflow-hidden">
-        <video
+        {/* <video
           className="w-full h-full object-cover opacity-20 pointer-events-none filter grayscale contrast-125"
           preload="auto"
           autoPlay
@@ -38,7 +38,7 @@ export function Lp3Hero() {
           playsInline
         >
           <source src={videoUrl} type="video/mp4" />
-        </video>
+        </video> */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#050505] pointer-events-none" />
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay"></div>
       </div>

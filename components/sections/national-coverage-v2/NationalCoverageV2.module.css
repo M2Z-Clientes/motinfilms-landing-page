@@ -13,6 +13,12 @@
   margin-top: 60px;
   margin-left: 70px;
 }
+/* Regra para Mobile (telas menores que 768px) */
+@media (max-width: 768px) {
+  .mapSvg {
+    margin-left: 50px; /* Seu ajuste solicitado */
+  }
+}
 
 /* Estilo base dos estados (Paths) */
 .statePath {

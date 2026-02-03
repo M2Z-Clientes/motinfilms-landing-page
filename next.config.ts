@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   images: {
+    formats: ["image/avif", "image/webp"], // Adicione esta linha
     remotePatterns: [
       {
         protocol: "https",

@@ -1,18 +1,30 @@
 'use client';
-import { TrackingProvider } from 'ninetwo-user-tracking';
+
 import { ReactNode } from 'react';
+import dynamic from 'next/dynamic';
+
+// Otimização: Separa a lib de tracking do bundle principal.
+// NOTA: Não usamos 'ssr: false' aqui porque ele envolve os {children}.
+// Se desligar o SSR aqui, você mata o SEO do site inteiro.
+
+const RDStationScript = dynamic(() => import('@/lib/RDStationScript'), {
+  ssr: false,
+});
+
+const TrackingProvider = dynamic(
+  () => import('ninetwo-user-tracking').then((mod) => mod.TrackingProvider)
+);
 
 interface ProvidersProps {
   children: ReactNode;
 }
 
 export function Providers({ children }: ProvidersProps) {
-  // Assuming the ninetwo-user-tracking library is configured to pick up a TRACKING_ID
-  // from environment variables or through its own internal setup.
-  // The plan did not provide a specific TrackingID to pass here.
   return (
     <TrackingProvider gtmId="GTM-MMXG7WK" debug>
       {children}
+
+      <RDStationScript />
     </TrackingProvider>
   );
 }

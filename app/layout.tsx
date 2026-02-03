@@ -1,7 +1,10 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import { Providers } from './providers';
-import RDStationScript from '@/lib/RDStationScript';
+import dynamic from 'next/dynamic';
+
+// Otimização: Carrega o script do RD Station apenas no lado do cliente (navegador)
+// ssr: false garante que o servidor não perca tempo processando isso.
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -21,7 +24,6 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
-        <RDStationScript />
       </body>
     </html>
   );

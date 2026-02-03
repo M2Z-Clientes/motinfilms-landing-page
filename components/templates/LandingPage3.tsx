@@ -1,5 +1,5 @@
 'use client'
-
+import dynamic from 'next/dynamic';
 import { Lp3Hero } from '@/components/sections-lp-3/Lp3Hero';
 import { TheWound } from '@/components/sections-lp-3/TheWound';
 import { TheTurnaround } from '@/components/sections-lp-3/TheTurnaround';
@@ -7,11 +7,19 @@ import { NoBrainerOffer } from '@/components/sections-lp-3/NoBrainerOffer';
 import { EliteSocialProof } from '@/components/sections-lp-3/EliteSocialProof';
 import { EffortlessMethod } from '@/components/sections-lp-3/EffortlessMethod';
 import { UltimatumFooter } from '@/components/sections-lp-3/UltimatumFooter';
-import { Gallery } from '@/components/sections/Gallery';
+// import { Gallery } from '@/components/sections/Gallery';
 import { SocialProof } from '@/components/sections/SocialProof';
 import { AncineLicense } from '@/components/sections/AncineLicense';
 import { TrackView } from 'ninetwo-user-tracking';
-import { NationalCoverageV2 } from '../sections/national-coverage-v2/NationalCoverageV2';
+// import { NationalCoverageV2 } from '../sections/national-coverage-v2/NationalCoverageV2';
+
+const NationalCoverageV2 = dynamic(() => import('../sections/national-coverage-v2/NationalCoverageV2').then(mod => mod.NationalCoverageV2), {
+  loading: () => <div className="h-[600px] bg-[#050505]" />, // Skeleton simples enquanto carrega
+  ssr: false
+});
+
+const Gallery = dynamic(() => import('@/components/sections/Gallery').then(mod => mod.Gallery));
+
 
 interface LandingPage3Props {
   city?: string;

@@ -1,8 +1,9 @@
 'use client'
+import dynamic from 'next/dynamic';
 import { Hero } from '@/components/sections/Hero';
 import { Features } from '@/components/sections/Features';
 import { SocialProof } from '@/components/sections/SocialProof';
-import { Gallery } from '@/components/sections/Gallery';
+// import { Gallery } from '@/components/sections/Gallery';
 import { CallToAction } from '@/components/sections/CallToAction';
 import { TrackView } from 'ninetwo-user-tracking';
 import { OurNumbers } from '@/components/sections/OurNumbers';
@@ -11,7 +12,14 @@ import { AncineLicense } from '@/components/sections/AncineLicense';
 import { BonusFormats } from '@/components/sections/BonusFormats';
 import { Methodology } from '@/components/sections/Methodology';
 import { Testimonials } from '@/components/sections/Testimonials';
-import { NationalCoverageV2 } from '@/components/sections/national-coverage-v2/NationalCoverageV2';
+// import { NationalCoverageV2 } from '@/components/sections/national-coverage-v2/NationalCoverageV2';
+
+const NationalCoverageV2 = dynamic(() => import('../sections/national-coverage-v2/NationalCoverageV2').then(mod => mod.NationalCoverageV2), {
+  loading: () => <div className="h-[600px] bg-[#050505]" />, // Skeleton simples enquanto carrega
+  ssr: false
+});
+
+const Gallery = dynamic(() => import('@/components/sections/Gallery').then(mod => mod.Gallery));
 
 
 // Aceita uma prop "city" opcional, caso queira personalizar o texto no futuro

@@ -1,4 +1,12 @@
 'use client'
+import dynamic from 'next/dynamic';
+
+const NationalCoverageV2 = dynamic(() => import('../sections/national-coverage-v2/NationalCoverageV2').then(mod => mod.NationalCoverageV2), {
+  loading: () => <div className="h-[600px] bg-[#050505]" />, // Skeleton simples enquanto carrega
+  ssr: false
+});
+
+const Gallery = dynamic(() => import('@/components/sections/Gallery').then(mod => mod.Gallery));
 
 import { Lp2Hero } from '@/components/sections-lp-2/Lp2Hero';
 import { TheProvocation } from '@/components/sections-lp-2/TheProvocation';
@@ -10,10 +18,8 @@ import { ExcellenceMethod } from '@/components/sections-lp-2/ExcellenceMethod';
 import { FinalCTA } from '@/components/sections-lp-2/FinalCTA';
 import { AncineLicense } from '@/components/sections/AncineLicense';
 import { NationalCoverage } from '@/components/sections/NationalCoverage';
-import { Gallery } from '@/components/sections/Gallery';
 import { SocialProof } from '@/components/sections/SocialProof';
 import { TrackView } from 'ninetwo-user-tracking';
-import { NationalCoverageV2 } from '../sections/national-coverage-v2/NationalCoverageV2';
 
 // Aceita uma prop "city" opcional, caso queira personalizar o texto no futuro
 interface LandingPage2Props {
